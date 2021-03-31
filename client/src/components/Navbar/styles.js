@@ -15,9 +15,9 @@ export default makeStyles((theme) => ({
     color: 'rgba(0,183,255, 1)',
     textDecoration: 'none',
   },
-  image: {
-    marginLeft: '15px',
-  },
+  // image: {
+  //   marginLeft: '15px',
+  // },
   toolbar: {
     display: 'flex',
     justifyContent: 'flex-end',
