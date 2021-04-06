@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken';
 
+const secret = 'test';
+
 // after the user is signed in, they get a specific JWToken. Here we check if its valid, and they are allowed to like, post, etc
 const auth = async (req, res, next) => {
   try {
@@ -12,7 +14,7 @@ const auth = async (req, res, next) => {
 
     //this gets the user ID if we are using our own token
     if(token && isCustomAuth) {
-      decodedData = jwt.verify(token, 'test');
+      decodedData = jwt.verify(token, secret);
 
       req.userId = decodedData?.indexOf;
     } else { 
@@ -27,6 +29,6 @@ const auth = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 export default auth;
